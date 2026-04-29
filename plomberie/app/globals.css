@@ -1,0 +1,127 @@
+/* app/globals.css - Version compatible Tailwind CSS v4 */
+@import "tailwindcss";
+
+/* Définissez vos thèmes et variables personnalisées ici */
+@theme {
+  /* Police par défaut */
+  --font-family-sans: 'Sora', sans-serif;
+
+
+  /* Vos couleurs personnalisées */
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-300: #93c5fd;
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-blue-800: #1e40af;
+  --color-blue-900: #1e3a8a;
+
+  /* Couleurs de base pour le mode clair */
+  --color-background: #f8fafc;
+  --color-foreground: #0f172a;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+  --color-border: #e2e8f0;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+
+  /* Animations personnalisées */
+  --animate-fade-in: fadeIn 0.5s ease-in-out;
+  --animate-slide-up: slideUp 0.3s ease-out;
+
+  /* Breakpoints personnalisés si nécessaire */
+  --breakpoint-md: 1024px;  /* Le menu hamburger apparaîtra en dessous de 1024px */
+  --breakpoint-lg: 1280px
+
+}
+
+.dark {
+  --color-background: #0f172a;
+  --color-foreground: #f1f5f9;
+  --color-card: #1e293b;
+  --color-card-foreground: #f1f5f9;
+  --color-border: #334155;
+  --color-muted: #1e293b;
+  --color-muted-foreground: #94a3b8;
+  
+  /* Adaptation des couleurs blue pour le mode sombre */
+  --color-blue-50: #1e3a8a;
+  --color-blue-100: #1e40af;
+  --color-blue-200: #1d4ed8;
+  --color-blue-300: #2563eb;
+  --color-blue-400: #3b82f6;
+  --color-blue-500: #60a5fa;
+  --color-blue-600: #93c5fd;
+  --color-blue-700: #bfdbfe;
+  --color-blue-800: #dbeafe;
+  --color-blue-900: #eff6ff;
+}
+
+/* Définition des keyframes pour les animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Styles de base */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Sora', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Composants personnalisés (équivalent de @layer components) */
+@layer components {
+  .container-custom {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Composant Card avec support du mode sombre */
+  .card {
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Classes utilitaires pour le mode sombre */
+  .bg-background {
+    background-color: var(--color-background);
+  }
+  
+  .text-foreground {
+    color: var(--color-foreground);
+  }
+  
+  .border-border {
+    border-color: var(--color-border);
+  }
+
+    .bg-card {
+    background-color: var(--color-card);
+  }
+  
+  .text-card-foreground {
+    color: var(--color-card-foreground);
+  }
+}
+
